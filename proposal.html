@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .team-members {
+            list-style-type: none;
+            padding: 0;
+        }
+        .team-members li {
+            margin-bottom: 10px;
+        }
+        .goals-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #f5f5f5;
+        }
+        .resources-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resources-list li {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rain It In</h1>
+    
+    <div class="section">
+        <h2>Summary and Team Members</h2>
+        <p>We plan to develop a physically-based rain simulation that dynamically adjusts to rain intensity and droplet size. The
+        project will combine particle-based simulation with real-time rendering techniques to visually and physically simulate
+        realistic rain behavior and interaction with surfaces including itself.</p>
+        <h3>Team Members:</h3>
+        <ul class="team-members">
+            <li>Sophie Nazarian</li>
+            <li>Andy Wang</li>
+            <li>Dmytro Krukovskyi</li>
+            <li>April Zhang</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Problem Description</h2>
+        <p>Rain is a complex interaction between water and its surface. We want to simulate rain that adapts to current rain
+        conditions: heavier rain should create bigger splashes or rain falling on objects should either bounce or drip based off
+        of geometry and intensity. Drop physics, adjustable parameters and splash simulation would all be taken account when
+        creating this project. We will treat each rain droplet as its own particle and apply the proper forces for it to behave as such. 
+        Figuring out the math for splash and pooling effects might be challenging, but nothing a little physics cant handle.</p>
+    </div>
+
+    <div class="section">
+        <h2>Goals and Deliverables</h2>
+        <div class="goals-section">
+            <h3>1. What We Plan to Deliver</h3>
+            <p>We plan to deliver a real-time particle-based rain simulation with adjustable parameters such as rain intensity from
+            light drizzle to heavy downpour and droplet size which affects fall speed and splash intensity. We also want to
+            implement puddling/pooling based off the amount of water that has been rained. Lastly we want to show the interaction
+            between the droplets and any object it would collide with if present.</p>
+            
+            <h3>2. What We Hope to Deliver</h3>
+            <p>If things go well and we are ahead of schedule, we would like to add wind conditions as a parameter that would affect
+            the rain such as wind direction and wind intensity. This will increase the rain interaction physics by the water falling.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Schedule</h2>
+        <table class="schedule-table">
+            <tr>
+                <th>Week</th>
+                <th>Tasks</th>
+            </tr>
+            <tr>
+                <td>Week 1</td>
+                <td>Particle System (get the rain to actually work) (rain physics) (make it look realistic) (ray tracing for light if we want true realism)</td>
+            </tr>
+            <tr>
+                <td>Week 2</td>
+                <td>UI (adjustable rain intensity, droplet size)</td>
+            </tr>
+            <tr>
+                <td>Week 3</td>
+                <td>Collisionf system (object interaction, if boundary is present: pooling/puddling, rain freefall no boundary) (do we want to treat the mouse as an object?)</td>
+            </tr>
+            <tr>
+                <td>Week 4</td>
+                <td> Adding wind potentially (intensity direction, wind/rain interaction)</td>
+            </tr>
+        </table>
+    </div>
+
+    
+    <div class="webpage">
+        <h2>Webpage</h2>
+        <a href="https://andywa-ng.github.io/cs184-finalproj/">Webpage Link</a>
+    </div>
+
+    <div class="section">
+        <h2>Resources</h2>
+        <ul class="resources-list">
+            <li><strong>References:</strong> tbd after feedback</li>
+            <li><strong>Computing Platform:</strong> tbd after feedback</li>
+            <li><strong>Existing Code:</strong> tbd after feedback</li>
+        </ul>
+    </div>
+</body>
+</html>

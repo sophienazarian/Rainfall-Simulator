@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain It In – Milestone Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #f5f5f5;
+        }
+        .resources-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resources-list li {
+            margin-bottom: 10px;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+        .highlight {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+        }
+        .key-points li {
+            margin-bottom: 8px;
+        }
+        .current-focus {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #2980b9;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rain It In – Milestone Report</h1>
+
+    <div class="section">
+        <p>
+            Link to Video: <a href="https://drive.google.com/file/d/1rT4IfQeYuLJd40H5UYkxC_1hFQOyDj0y/view?usp=sharing">Rain It In Simulation Demo</a>
+            <br>
+            Link to Slides: <a href="https://docs.google.com/presentation/d/1Ad-fp7o7m31z4q4mvXtQUi3BMRwNLdZhXGe1bZsnQsA/edit?usp=sharing">Project Presentation Slides</a>
+        </p>
+
+        <h2>Accomplishments</h2>
+        <p>
+            We've implemented the core 2D rain‐droplet simulation:
+            <ul>
+                <li>Particle dynamics under gravity (fixed‐timestep integration)</li>
+                <li>Collision detection with a slanted platform</li>
+                <li>Splash generation using Gaussian and log‐normal distributions</li>
+                <li>Sliding behavior along slopes with friction</li>
+                <li>Merging of resting splash particles into puddles</li>
+                <li>Matplotlib‐based animation over 200 frames</li>
+            </ul>
+        </p>
+        <!-- Optional: add your own screenshot file in project and uncomment below -->
+        <!-- <img src="screenshot.png" alt="Rain It In Simulation Screenshot"> -->
+    </div>
+
+    <div class="section">
+        <h2>Preliminary Results</h2>
+        <p>
+            The simulation animates raindrops falling, splashing on impact, then sliding or merging into puddles.
+            Initial tests run smoothly at ~20–30 FPS for 200 frames on our development machines.
+        </p>
+        
+        <div class="highlight">
+            <h3>Physics Model Details</h3>
+            <ul class="key-points">
+                <li><strong>Optimization Focus:</strong> Low particle count for future rendering efficiency</li>
+                <li><strong>Splash Distribution:</strong> Follows a Gaussian pattern with random outliers using Monte Carlo scattering</li>
+                <li><strong>Droplet Physics:</strong> Child droplet size and velocity follow log-normal distribution scaled with parent volume</li>
+                <li><strong>Motion Calculation:</strong> Gravity and motion implemented using Euler integration</li>
+                <li><strong>Recursive Splashing:</strong> Child droplets with sufficient size/velocity can create additional splashes on impact</li>
+                <li><strong>Surface Interaction:</strong> Droplets with insufficient size/velocity experience friction to slide/drip down surfaces</li>
+                <li><strong>Water Accumulation:</strong> Pooling on ground/platform based on volume of accumulated water</li>
+            </ul>
+        </div>
+        
+        <h3>Current Progress</h3>
+        <p>
+            We've shifted our scope to focus on the interactions between water droplets and objects. Our 2D modeling 
+            has proven extremely valuable for understanding the inner workings of these interactions, and we believe 
+            this knowledge will transfer effectively to our final 3D product. We've also begun OpenGL 3D modeling to 
+            prepare for the next phase.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Reflection &amp; Updated Work Plan</h2>
+        <p>
+            We completed our initial goals for a working particle system with splash and slide physics on schedule.
+            Our physics model aligns well with research findings and demonstrates consistent behavior with expected outcomes, 
+            even when varying initial droplet size and position.
+        </p>
+        
+        <div class="current-focus">
+            <h3>Current Focus: 3D Implementation</h3>
+            <p>After two weeks of work, we're now shifting our focus entirely to the 3D implementation of our raindrop simulation. We've made significant progress on the 2D model and are now translating these principles to OpenGL for 3D rendering.</p>
+        </div>
+        
+        <p>Updated work plan for remaining weeks:</p>
+        
+        <table class="schedule-table">
+            <tr>
+                <th>Week</th>
+                <th>Tasks</th>
+            </tr>
+            <tr>
+                <td>Current Week</td>
+                <td>
+                    Focus on getting the OpenGL 3D environment fully operational, including basic particle rendering and environment setup.
+                </td>
+            </tr>
+            <tr>
+                <td>Week 3</td>
+                <td>
+                    Implement our established physics model in 3D space, including collision detection, splash generation, and fluid dynamics.
+                </td>
+            </tr>
+            <tr>
+                <td>Week 4</td>
+                <td>
+                    Add advanced rendering features: lighting effects, ray tracing for realistic water appearance, custom shaders, and user interface elements.
+                </td>
+            </tr>
+        </table>
+        
+        <h3>Coming Next</h3>
+        <ul>
+            <li>Translate our model to the 3D world using the same collision and splash physics</li>
+            <li>Implement rendering pipeline:
+                <ul>
+                    <li>Ray-trace a single transparent sphere and use the resulting appearance for all droplets</li>
+                    <li>Apply motion blur from frame averaging to reduce rendering cost and time</li>
+                    <li>Balance realism with practical performance considerations</li>
+                </ul>
+            </li>
+            <li>Evaluate whether to maintain the current bounding box for debugging (tracks all child splashes) or make it boundless</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Resources</h2>
+        <ul class="resources-list">
+            <li>Code &amp; hosting: <a href="https://github.com/andywa-ng/cs184-finalproj">GitHub repo</a></li>
+            <li>Hosted demo &amp; milestone report: 
+                <a href="https://andywa-ng.github.io/cs184-finalproj/milestone.html">
+                https://andywa-ng.github.io/cs184-finalproj/milestone.html</a>
+            </li>
+            <li>Matplotlib docs for animation: <a href="https://matplotlib.org/stable/api/animation_api.html">
+                https://matplotlib.org/stable/api/animation_api.html</a>
+            </li>
+            <li>Research Paper: <a href="https://www.cs.columbia.edu/cg/pdfs/135-splash_egsr07.pdf">
+                Physically Based Modeling and Animation of Fire</a>
+            </li>
+            <li>GPU-Accelerated Simulation: <a href="https://classes.cs.uchicago.edu/archive/2022/fall/23700-1/papers/gpu-rain.pdf">
+                GPU-based Rain Simulation</a>
+            </li>
+            <li>Reference Project: <a href="https://cal-cs184-student.github.io/project-webpages-sp23-CardiacMangoes/finalProject/index.html">
+                Previous Student Project on Water Simulation</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

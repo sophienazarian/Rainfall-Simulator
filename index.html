@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain It In - CS184 Final Project</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #f5f9fc;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+        }
+        .description {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 18px;
+            color: #555;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+        .nav-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+        }
+        .project-info {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .team-members {
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+        .github-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .github-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rain It In</h1>
+        <p class="description">CS184 Final Project - Water Droplet Physics Simulation</p>
+
+        <div class="nav-links">
+            <a href="proposal.html" class="nav-button">Project Proposal</a>
+            <a href="milestone.html" class="nav-button">Milestone Report</a>
+        </div>
+
+        <div class="project-info">
+            <h2>About the Project</h2>
+            <p>
+                Rain It In is a water droplet physics simulation that models the complex behavior of raindrops
+                as they fall, splash upon impact, and interact with various surfaces. Our project implements 
+                realistic particle dynamics, splash generation, and fluid behaviors in both 2D and 3D environments.
+            </p>
+            
+            <p>
+                We utilize physically-based modeling to accurately simulate water droplet interactions, including:
+            </p>
+            <ul>
+                <li>Particle dynamics under gravity with fixed-timestep integration</li>
+                <li>Complex splash patterns using Gaussian and log-normal distributions</li>
+                <li>Surface sliding with friction and momentum conservation</li>
+                <li>Puddle formation and water accumulation</li>
+                <li>3D visualization using OpenGL with advanced lighting and shaders</li>
+            </ul>
+
+            <p class="team-members">
+                A CS184 Computer Graphics and Imaging Project
+            </p>
+
+            <a href="https://github.com/andywa-ng/cs184-finalproj" class="github-link">
+                View on GitHub
+            </a>
+        </div>
+    </div>
+</body>
+</html>
